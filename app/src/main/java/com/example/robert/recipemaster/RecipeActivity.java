@@ -73,8 +73,8 @@ public class RecipeActivity extends Activity {
 
         intent = getIntent();
 
-        setUserData();
         getDataAboutProducts();
+        setUserData();
 
         ViewGroup mainLayout = (ViewGroup)findViewById(R.id.mainLayout);
         mainLayout.invalidate();
@@ -116,11 +116,11 @@ public class RecipeActivity extends Activity {
                         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getActionBar().getTitle().toString());
                         emailIntent.setType("application/octet-stream");
                         for (int i = 0; i < ingredientsArrayList.size(); i++) {
-                            ingredList += (ingredientsArrayList.get(i).ingredient+"\r\n");
+                            ingredList += ("- "+ingredientsArrayList.get(i).ingredient+"\r\n");
                         }
 
                         for (int i = 0; i < stepsArrayList.size(); i++) {
-                            stepsList+=(stepsArrayList.get(i).step+". "+stepsArrayList.get(i).stepDesc+"\r\n");
+                            stepsList+=(stepsArrayList.get(i).step+""+stepsArrayList.get(i).stepDesc+"\r\n");
                         }
                         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, prodTitle + "\r\n\r\n" + prodDesc
                                 + "\r\n\r\n" + "Ingredients:" + "\r\n\r\n"+ingredList+"\r\n\r\n"+"Preparing:"+"\r\n\r\n"+stepsList);
@@ -135,6 +135,7 @@ public class RecipeActivity extends Activity {
         }
 
     }
+
 
     private void setUserData(){
         TextView userName = (TextView)findViewById(R.id.nameView);
@@ -261,9 +262,12 @@ public class RecipeActivity extends Activity {
     public void addImageToViewer(Bitmap bmp){
         LinearLayout linLay = (LinearLayout)findViewById(R.id.linLayImages);
         LinearLayout faceLay = (LinearLayout)findViewById(R.id.faceImageLay);
+        LinearLayout nameLay = (LinearLayout)findViewById(R.id.nameLay);
 
-        if(checkScreenSize()<7.5)
-            linLay.addView(insertPhoto(bmp,350,330));
+        if(checkScreenSize()<7.5) {
+            linLay.addView(insertPhoto(bmp, 350, 330));
+            nameLay.setPadding(10, 0, 0, 0);
+        }
         else if(checkScreenSize()>=7.5) {
             linLay.addView(insertPhoto(bmp, 450, 430));
             LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(0,LinearLayout.LayoutParams.MATCH_PARENT, 0.5f);

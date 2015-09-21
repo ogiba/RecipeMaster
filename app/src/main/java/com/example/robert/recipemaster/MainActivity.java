@@ -94,10 +94,12 @@ public class MainActivity extends Activity {
                 fbUserName = fbProfile.getName();
                 getImageFromFb(fbProfile);
                 StaticData.loggedIn=true;
+                getImageFromFb(fbProfile);
             }
             setUserLabel(fbProfile);
             logginToFacebok();
             getRecipe();
+
         }else{
             RoundedImageView roundImg = (RoundedImageView)findViewById(R.id.roundedImageView);
             Bitmap noWifi = BitmapFactory.decodeResource(getResources(),R.drawable.no_wifi_error);
@@ -112,7 +114,8 @@ public class MainActivity extends Activity {
         //manage login result
         callbackManager.onActivityResult(requestCode, resultCode, data);
 
-        setUserLabel(Profile.getCurrentProfile());
+        if(Profile.getCurrentProfile()!=null)
+            setUserLabel(Profile.getCurrentProfile());
 
     }
 
@@ -311,6 +314,8 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 makeTrack(loginResult);
+                if(Profile.getCurrentProfile()!=null)
+                    getImageFromFb(Profile.getCurrentProfile());
 
             }
 
@@ -336,7 +341,7 @@ public class MainActivity extends Activity {
                 Intent transIntent = new Intent(MainActivity.this, RecipeActivity.class);
                 transIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 if (fbUserName != null) {
-                    transIntent.putExtra("name",fbUserName);
+                    transIntent.putExtra("name", fbUserName);
                 }
                 startActivity(transIntent);
             }

@@ -119,7 +119,8 @@
                     fab:fab_size="mini"
                     fab:fab_label="Zaloguj przez Facebooka"
                     fab:fab_colorNormal="@color/blue_A500"
-                    fab:fab_colorRipple="@color/blue_A500"/>
+                    fab:fab_colorPressed="@color/blue_A500"
+                    fab:fab_colorRipple="@color/gray_A300"/>
 
 
             </com.github.clans.fab.FloatingActionMenu>
