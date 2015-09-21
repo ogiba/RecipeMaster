@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <ImageView android:id="@+id/pizzaImg"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pizzaImg"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="right">
+
+                    <Button android:id="@+id/okDialogBtn"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/dialog_yes"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@null"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_A500"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="left|right">
+
+                    <Button android:id="@+id/cancelDialogBtn"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/dialog_no"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:background="@null"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_A500"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

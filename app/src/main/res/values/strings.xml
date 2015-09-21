@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RecipeMaster</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">1669209446688889</string>
+    <string name="title_activity_recipe"><!--RecipeActivity--></string>
+    <string name="product_name"><!--Product Name--></string>
+    <string name="desc_prod"><!--Product Description--></string>
+    <string name="ingrid_title">Ingredients:</string>
+    <string name="ingredient">One Ingredient</string>
+    <string name="prepare_title">Preparing:</string>
+    <string name="prepare_step">First step of preparing</string>
+    <string name="save_file">Czy chcesz zapisać?</string>
+    <string name="positive_info_about_saving">Dodano do galerii</string>
+    <string name="negative_info_about_saving">Błąd przy zapisie</string>
+    <string name="dialog_yes">Tak</string>
+    <string name="dialog_no">Nie</string>
+    <string name="fb_login">Zaloguj przez Facebooka</string>
+</resources>

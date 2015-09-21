@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.robert.recipemaster.RecipeActivity"
+    android:id="@+id/mainLayout"
+    android:paddingTop="?android:attr/actionBarSize">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:layout_margin="15dp"
+            android:paddingTop="5dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5" >
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/product_name"
+                                android:id="@+id/prodNameField"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/desc_prod"
+                                android:id="@+id/descProdField"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="15dp" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/titleIngredView"
+                                android:textStyle="bold" />
+
+                            <ListView
+                                tools:listitem="@layout/ingredients_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ingredListView"
+                                android:choiceMode="none"
+                                android:divider="@null"
+                                android:dividerHeight="-8dp"
+                                android:headerDividersEnabled="false"
+                                android:footerDividersEnabled="false"
+                                android:paddingTop="15dp"
+                                android:scrollbars="none"
+                                android:nestedScrollingEnabled="true"
+                                android:stackFromBottom="false"
+                                android:clickable="false"
+                                android:focusableInTouchMode="false"
+                                android:focusable="false"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="15dp" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/titlePrepareView"
+                                android:textStyle="bold" />
+
+                            <ListView
+                                tools:listitem="@layout/ingredients_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/prepareListView"
+                                android:choiceMode="none"
+                                android:divider="@null"
+                                android:dividerHeight="-8dp"
+                                android:headerDividersEnabled="false"
+                                android:footerDividersEnabled="false"
+                                android:paddingTop="15dp"
+                                android:scrollbars="none"
+                                android:nestedScrollingEnabled="true"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="15dp" >
+
+                            <HorizontalScrollView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/horizontalScrollView"
+                                android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:id="@+id/linLayImages">
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:background="@color/gray_A300"
+            android:alpha="0.8">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="right">
+
+                    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nameView"
+                        android:textColor="#000000"
+                        android:layout_row="0"
+                        android:layout_column="9"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/faceImageLay"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/fbImage"
+                        android:layout_margin="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
